@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     circletickslider.cpp \
+    floatslider.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     circletickslider.h \
+    floatslider.h \
     mainwindow.h
 
 FORMS += \

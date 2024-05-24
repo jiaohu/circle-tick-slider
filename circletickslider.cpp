@@ -15,7 +15,15 @@ CircleTickSlider::CircleTickSlider(QWidget *parent) : QSlider(parent)
 
 CircleTickSlider::CircleTickSlider(Qt::Orientation orientation, QWidget *parent) : QSlider(orientation, parent)
 {
+    setMouseTracking(true);
+    installEventFilter(this);
     setTickPosition(QSlider::TicksBelow);
+}
+
+void CircleTickSlider::setFloat(float base, float step)
+{
+    this->base = base;
+    this->step = step;
 }
 
 void CircleTickSlider::paintEvent(QPaintEvent *event)
@@ -54,7 +62,7 @@ bool CircleTickSlider::eventFilter(QObject *watched, QEvent *event)
 
         QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
         int value = QStyle::sliderValueFromPosition(minimum(), maximum(), mouseEvent->pos().x(), width());
-        QToolTip::showText(mouseEvent->globalPos(), QString::number(value), this);
+        QToolTip::showText(mouseEvent->globalPos(), QString::number(value * step + base), this);
     }
     return QSlider::eventFilter(watched, event);
 }

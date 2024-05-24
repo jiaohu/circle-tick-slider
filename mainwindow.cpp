@@ -7,6 +7,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->floatSliderWidget->setRange(95, 105);
+    ui->floatSliderWidget->setStep(0.1);
+    ui->floatSliderWidget->slider->setFloat(95, 0.1);
 }
 
 MainWindow::~MainWindow()

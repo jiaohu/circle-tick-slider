@@ -119,6 +119,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="FloatSlider" name="floatSliderWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>240</y>
+      <width>391</width>
+      <height>111</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -137,6 +147,12 @@
    <class>CircleTickSlider</class>
    <extends>QSlider</extends>
    <header location="global">circletickslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FloatSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">floatslider.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
