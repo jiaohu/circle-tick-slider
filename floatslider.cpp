@@ -35,31 +35,34 @@ FloatSlider::FloatSlider(QWidget *parent) : QWidget(parent)
                           background: #007bff;
                           border-radius: 4px;
                       })");
-    label = new QLabel(this);
 
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(slider);
-    layout->addWidget(label);
-    connect(slider, &CircleTickSlider::valueChanged, this, &FloatSlider::updateLabel);
+    connect(slider, &CircleTickSlider::valueChanged, this, &FloatSlider::updateValue);
 }
 
 void FloatSlider::setRange(float min, float max)
 {
     slider->setRange(0, 100);
-//    slider->setTickInterval(1);
-    label->setNum(minFloat);
     this->minFloat = min;
     this->maxFloat = max;
+    this->slider->setBase(min);
 }
 
 void FloatSlider::setStep(float step)
 {
     this->stepFloat = step;
+    this->slider->setStep(step);
 }
 
-void FloatSlider::updateLabel(int value)
+
+void FloatSlider::setValue(float value)
 {
-//    qDebug()<<value;
-    label->setNum(minFloat + value* stepFloat);
+    this->slider->setValue((value - minFloat) * 10);
+}
+
+void FloatSlider::updateValue(int value)
+{
+    emit changeValue(minFloat + value * stepFloat);
 }

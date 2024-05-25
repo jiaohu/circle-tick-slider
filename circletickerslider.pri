@@ -2,7 +2,7 @@ QT       += core gui
 
 CONFIG += c++11
 
-HEADERS += 
+HEADERS += $$PWD/CircleTickSlider \
     $$PWD/circletickslider.h
 SOURCES += 
     $$PWD/circletickslider.cpp

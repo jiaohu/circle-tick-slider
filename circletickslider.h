@@ -9,7 +9,16 @@ class CircleTickSlider : public QSlider
 public:
     CircleTickSlider(QWidget *parent = nullptr);
     CircleTickSlider(Qt::Orientation orientation, QWidget *parent = nullptr);
-    void setFloat(float base, float step);
+    /**
+     * @brief setBase used for float slider to set base value(min value)
+     * @param base
+     */
+    void setBase(float base);
+    /**
+     * @brief setStep used for float slider to set step
+     * @param step
+     */
+    void setStep(float step);
 
     // QWidget interface
 protected:

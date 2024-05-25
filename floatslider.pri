@@ -2,7 +2,7 @@ QT       += core gui
 
 CONFIG += c++11
 
-HEADERS += 
+HEADERS += $$PWD/FloatSlider \
     $$PWD/floatslider.h \
     $$PWD/circletickslider.h
 SOURCES += $$PWD/floatslider.cpp \

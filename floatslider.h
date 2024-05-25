@@ -13,14 +13,16 @@ public:
     explicit FloatSlider(QWidget *parent = nullptr);
     void setRange(float min, float max);
     void setStep(float step);
+    void setValue(float value);
 
-private:
-    void updateLabel(int value);
+public slots:
+    void updateValue(int value);
+signals:
+    void changeValue(float);
+
 public:
     CircleTickSlider *slider;
 private:
-
-    QLabel *label;
     float minFloat;
     float maxFloat;
     float stepFloat;

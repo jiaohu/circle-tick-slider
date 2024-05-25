@@ -20,9 +20,13 @@ CircleTickSlider::CircleTickSlider(Qt::Orientation orientation, QWidget *parent)
     setTickPosition(QSlider::TicksBelow);
 }
 
-void CircleTickSlider::setFloat(float base, float step)
+void CircleTickSlider::setBase(float base)
 {
     this->base = base;
+}
+
+void CircleTickSlider::setStep(float step)
+{
     this->step = step;
 }
 
